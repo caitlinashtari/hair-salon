@@ -91,3 +91,15 @@ describe('editing a client', {:type => :feature}) do
     expect(page).to have_content("Hair Salon")
   end
 end
+
+describe('view all clients path', :type => :feature) do
+  it('allows you to view all clients') do
+    stylist = Stylist.new({:name => "Sam", :id => nil})
+    stylist.save
+    client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
+    client.save
+    visit('/')
+    click_link('View All Clients')
+    expect(page).to have_content("Blam")
+  end
+end
