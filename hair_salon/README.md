@@ -1,8 +1,8 @@
 # _Hair Salon_
 
-#### _This application books salon appointments for clients. It allows users to add stylists and clients. Each client will only belong to one stylist (one-to-many). 12/09/2016_
+#### _This application books salon appointments for clients. It allows users to add stylists and clients. Each client will only belong to one stylist (one-to-many)._
 
-#### By _**Caitlin Ashtari**_
+#### By _**Caitlin Ashtari**,  12/09/2016_
 
 ## Setup/Installation Requirements
 
