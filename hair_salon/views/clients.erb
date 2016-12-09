@@ -1,6 +1,6 @@
+<h1>Client List</h1>
 <div class="card-panel teal lighten-2">
   <% if @clients.any?() %>
-  <p>Click on a client to see their info:</p>
 
   <ul>
     <% @clients.each do |client| %>
@@ -10,8 +10,8 @@
   <% else %>
   <p>There are no clients yet!</p>
   <% end %>
+</div>
 
-  <div class="container">
-    <a href="/"><button class="btn">Home</a>
-  </div>
+<div class="stylist-links">
+  <a href="/" class="waves-effect waves-teal btn-flat">Home</a>
 </div>

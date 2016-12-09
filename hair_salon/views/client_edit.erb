@@ -1,5 +1,6 @@
+<h1>Update <%=@client.name() %>'s Info </h1>
+
 <div class="card-panel teal lighten-2">
-  <h1>Update <%=@client.name() %>'s Info </h1>
 
   <form action="/clients/<%= @client.id() %>" method="post">
     <input name="_method" type="hidden" value="patch">
@@ -10,12 +11,12 @@
     <label for="appointment_time">Appointment Time:</label>
     <input id="appointment_time" name="appointment_time" type="text">
 
-    <button type="submit">Update</button>
+    <button type="submit" class="btn-floating btn-large waves-effect waves-light red">Update</button>
   </form>
+</div>
 
-  <form action="/clients/<%= @client.id() %>" method="post">
-    <input name="_method" type="hidden" value="delete">
+<form action="/clients/<%= @client.id() %>" method="post" id="delete-button">
+  <input name="_method" type="hidden" value="delete">
 
-    <button type="submit">Delete Client</button>
-  </form>
-</div>  
+  <button type="submit" class="waves-effect waves-teal btn-flat">Delete Client</button>
+</form>

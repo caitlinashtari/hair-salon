@@ -9,15 +9,20 @@ font-weight: 100;
 }
 
 
-.all-clients {
-  text-align: center;
-}
-
-.footer-links {
-  text-align: center;
-  padding-right: 75px;
+.all-clients,
+.stylist-links,
+.home {
+ text-align: center;
 }
 
 ul {
+  text-align: center;
+}
+
+a {
+  color: #fff;
+}
+
+#delete-button {
   text-align: center;
 }

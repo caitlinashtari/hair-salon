@@ -1,5 +1,6 @@
+<h1>Update <%=@stylist.name() %>'s Info </h1>
+
 <div class="card-panel teal lighten-2">
-  <h1>Update <%=@stylist.name() %>'s Info </h1>
 
   <form action="/stylists/<%= @stylist.id() %>" method="post">
     <input name="_method" type="hidden" value="patch">
@@ -7,12 +8,13 @@
     <label for="name">Name:</label>
     <input id="name" name="name" type="text">
 
-    <button type="submit">Update</button>
+    <button type="submit" class="btn-floating btn-large waves-effect waves-light red">Update</button>
   </form>
 
-  <form action="/stylists/<%= @stylist.id() %>" method="post">
-    <input name="_method" type="hidden" value="delete">
-
-    <button type="submit">Delete Stylist</button>
-  </form>
 </div>
+
+<form action="/stylists/<%= @stylist.id() %>" method="post"  id="delete-button">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit" class="waves-effect waves-teal btn-flat">Delete Stylist</button>
+</form>
