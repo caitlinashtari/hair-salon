@@ -35,4 +35,16 @@ describe('editing a stylist', {:type => :feature}) do
     click_link("Edit #{stylist.name}")
     expect(page).to have_content("Update")
   end
+
+  it('allows you to delete a stylist') do
+    stylist = Stylist.new({:name => "Sam", :id => nil})
+    stylist.save
+    client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
+    client.save
+    visit('/')
+    click_link(stylist.name)
+    click_link("Edit #{stylist.name}")
+    click_button("Delete Stylist")
+    expect(page).to have_content("Hair Salon")
+  end
 end
