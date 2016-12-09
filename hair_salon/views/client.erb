@@ -1,11 +1,13 @@
-<h3><%= @client.name() %>'s Appointment Info:</h3>
+<div class="card-panel teal lighten-2">
+  <h3><%= @client.name() %>'s Appointment Info:</h3>
 
-<ul>
-  <li>Time and Date: <%= @client.appointment_time() %></li>
-  <li>Stylist: <%= @stylist.name %></li>
-</ul>
+  <ul>
+    <li>Time and Date: <%= @client.appointment_time() %></li>
+    <li>Stylist: <%= @stylist.name %></li>
+  </ul>
 
-<div class="container">
-  <a href="/"><button class="btn">Home</a>
+  <div class="container">
+    <a href="/"><button class="btn">Home</a>
+  </div>
+  <p><a href="/clients/<%= @client.id() %>/edit">Edit <%= @client.name() %>'s Info</a></p>
 </div>
-<p><a href="/clients/<%= @client.id() %>/edit">Edit <%= @client.name() %>'s Info</a></p>

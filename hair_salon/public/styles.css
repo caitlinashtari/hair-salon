@@ -1,0 +1,23 @@
+h1, h3 {
+  text-align: center;
+  font-weight: 100;
+  text-shadow:
+}
+
+h4, h5 {
+font-weight: 100;
+}
+
+
+.all-clients {
+  text-align: center;
+}
+
+.footer-links {
+  text-align: center;
+  padding-right: 75px;
+}
+
+ul {
+  text-align: center;
+}

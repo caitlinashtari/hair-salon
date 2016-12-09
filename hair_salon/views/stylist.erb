@@ -1,17 +1,21 @@
 <% if @stylist.clients().any?() %>
   <h3>Here are <%= @stylist.name() %>'s clients:</h3>
 
-  <ul>
-    <% @stylist.clients().each() do |client| %>
-      <li><a href="/clients/<%= client.id() %>"><%= client.name() %>, (<%= client.appointment_time() %>)  </li>
-    <% end %>
-  </ul>
+<div class="card-panel teal lighten-2">
+
+    <ul>
+      <% @stylist.clients().each() do |client| %>
+        <li><a href="/clients/<%= client.id() %>"><%= client.name() %>, (<%= client.appointment_time() %>)  </li>
+      <% end %>
+    </ul>
 
   <% else %>
     <p>There are no clients for this stylist!</p>
   <% end %>
-
-<div class="container">
-  <a href="/"><button class="btn">Home</a>
 </div>
-<p><a href="/stylists/<%= @stylist.id() %>/edit">Edit <%= @stylist.name() %>'s Info</a></p>
+
+<div class="footer-links">
+  <a href="/" class="waves-effect waves-teal btn-flat"><button class="btn">Home</a>
+
+  <p><a href="/stylists/<%= @stylist.id() %>/edit" class="waves-effect waves-teal btn-flat">Edit <%= @stylist.name() %>'s Info</a></p>
+</div>
