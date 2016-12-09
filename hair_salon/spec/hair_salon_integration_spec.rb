@@ -10,6 +10,17 @@ describe('adding a new client and stylist', {:type => :feature}) do
     click_button('Add Stylist')
     expect(page).to have_content('Mandy')
   end
+
+  it('allows the user to add a new client to a stylist') do
+    stylist = Stylist.new({:name => "Sam", :id => nil})
+    stylist.save
+    visit('/')
+    fill_in('client_name', :with => 'Mandy')
+    fill_in('appointment_time', :with => '2016-12-12 00:12:00')
+    click_button('Add Client')
+    click_link(stylist.name)
+    expect(page).to have_content('Mandy')
+  end
 end
 
 describe('seeing details for a single stylist', {:type => :feature}) do
