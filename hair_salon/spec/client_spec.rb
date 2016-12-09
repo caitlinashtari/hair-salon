@@ -10,4 +10,11 @@ describe(Client) do
       expect(client.stylist_id).to(eq(nil))
     end
   end
+
+  describe('.all') do
+    it('starts off with no clients') do
+      expect(Client.all).to(eq([]))
+    end
+  end
+
 end
