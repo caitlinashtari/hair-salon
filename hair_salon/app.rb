@@ -21,12 +21,12 @@ post('/stylists') do
 end
 
 post('/clients') do
-  name = params.fetch("name")
+  name = params.fetch("client_name")
   appointment_time = params.fetch("appointment_time")
   stylist_id = params.fetch("stylist_id").to_i
   client = Client.new({:name => name, :id => nil, :appointment_time => appointment_time, :stylist_id => stylist_id})
   client.save()
-  @stylist = Stylist.find(stylist_id)
+  @stylists = Stylist.all()
   erb(:index)
 end
 
