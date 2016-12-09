@@ -53,9 +53,9 @@ describe(Stylist) do
     it("deletes a stylist's clients from the database") do
       stylist = Stylist.new({:name => "Samantha", :id => nil})
       stylist.save()
-      client = Client.new({:name => "Blam", :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
+      client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
       client.save()
-      client2 = Client.new({:name => "Spam", :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
+      client2 = Client.new({:name => "Spam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
       client2.save()
       stylist.delete()
       expect(Client.all()).to(eq([]))
