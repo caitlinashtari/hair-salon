@@ -74,3 +74,11 @@ patch("/clients/:id") do
   @stylist = Stylist.find(@client.stylist_id)
   erb(:client)
 end
+
+delete('/clients/:id') do
+  @client = Client.find(params.fetch("id").to_i())
+  @client.delete()
+  @clients = Client.all()
+  @stylists = Stylist.all
+  erb(:index)
+end

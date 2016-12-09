@@ -75,4 +75,19 @@ describe('editing a client', {:type => :feature}) do
     click_button("Update")
     expect(page).to have_content("Tam")
   end
+
+  it('allows you to delete a client') do
+    stylist = Stylist.new({:name => "Sam", :id => nil})
+    stylist.save
+    client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
+    client.save
+    visit('/')
+    click_link(stylist.name)
+    click_link(client.name)
+    click_link("Edit #{client.name}'s Info")
+    fill_in("name", :with => "Tam")
+    fill_in('appointment_time', :with => '2016-12-12 00:12:00')
+    click_button("Delete")
+    expect(page).to have_content("Hair Salon")
+  end
 end
