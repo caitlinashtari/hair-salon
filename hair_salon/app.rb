@@ -82,3 +82,8 @@ delete('/clients/:id') do
   @stylists = Stylist.all
   erb(:index)
 end
+
+get('/clients') do
+  @clients = Client.all
+  erb(:clients)
+end
