@@ -67,9 +67,12 @@ describe('editing a client', {:type => :feature}) do
     client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => stylist.id})
     client.save
     visit('/')
+    click_link(stylist.name)
     click_link(client.name)
-    click_link("Edit #{client.name}")
-    click_button("Edit Client")
-    expect(page).to have_content("Hair Salon")
+    click_link("Edit #{client.name}'s Info")
+    fill_in("name", :with => "Tam")
+    fill_in('appointment_time', :with => '2016-12-12 00:12:00')
+    click_button("Update")
+    expect(page).to have_content("Tam")
   end
 end

@@ -60,3 +60,17 @@ get('/clients/:id') do
   @stylist = Stylist.find(@client.stylist_id)
   erb(:client)
 end
+
+get("/clients/:id/edit") do
+  @client = Client.find(params.fetch("id").to_i())
+  erb(:client_edit)
+end
+
+patch("/clients/:id") do
+  name = params.fetch("name")
+  appointment_time = params.fetch("appointment_time")
+  @client = Client.find(params.fetch("id").to_i())
+  @client.update({:name => name, :appointment_time => appointment_time})
+  @stylist = Stylist.find(@client.stylist_id)
+  erb(:client)
+end
