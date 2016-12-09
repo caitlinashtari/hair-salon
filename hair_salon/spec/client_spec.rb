@@ -32,6 +32,15 @@ describe(Client) do
     end
   end
 
+  describe("#update") do
+    it("lets you update clients in the database") do
+      client = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => 1})
+      client.save()
+      client.update({:name => "Sam"})
+      expect(client.name()).to(eq("Sam"))
+    end
+  end
+
   describe("#delete") do
     it("lets you delete a client from the database") do
       client1 = Client.new({:name => "Blam", :id => nil, :appointment_time => "2016-12-12 00:12:00", :stylist_id => 1})
