@@ -3,7 +3,7 @@
 
   <ul>
     <% @stylist.clients().each() do |client| %>
-      <li><%= client.name() %> </li>
+      <li><%= client.name() %>, (<%= client.name() %>)  </li>
     <% end %>
   </ul>
 
@@ -14,3 +14,4 @@
 <div class="container">
   <a href="/"><button class="btn">Home</a>
 </div>
+<p><a href="/stylists/<%= @stylist.id() %>/edit">Edit <%= @stylist.name() %>'s Info</a></p>
