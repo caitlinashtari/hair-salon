@@ -3,7 +3,7 @@
 
   <ul>
     <% @stylist.clients().each() do |client| %>
-      <li><%= client.name() %>, (<%= client.appointment_time() %>)  </li>
+      <li><a href="/clients/<%= client.id() %>"><%= client.name() %>, (<%= client.appointment_time() %>)  </li>
     <% end %>
   </ul>
 
