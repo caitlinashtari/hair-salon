@@ -1,0 +1,43 @@
+<h1>Hair Salon</h1>
+
+<p>Add A Stylist</p>
+
+<form action="/stylists" method="post">
+  <label for="name">Stylist Name:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add Stylist</button>
+</form>
+
+<p> Add A Client</p>
+
+<form action="/clients" method="post">
+
+  <label for="client_name">Client Name:</label>
+  <input id="client_name" name="client_name" type="text">
+
+  <label for="appointment_time">Appointment Time:</label>
+  <input id="appointment_time" name="appointment_time" type="text">
+
+  <label for="stylist_id">Select a Stylist:</label>
+  <select id='stylist_id' name='stylist_id' type='text'>
+    <% @stylists.each() do |stylist| %>
+      <option value="<%= stylist.id()%>"> <%= stylist.name() %> </option>
+    <% end %>
+  </select>
+
+  <button type="submit">Add Client</button>
+</form>
+
+
+<% if @stylists.any?() %>
+<p>Click on a stylist to see their clients:</p>
+
+<ul>
+  <% @stylists.each do |stylist| %>
+  <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no stylists yet!</p>
+<% end %>
